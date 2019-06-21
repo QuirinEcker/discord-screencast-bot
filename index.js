@@ -6,6 +6,7 @@ const opn = require('opn');
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
 client.on('message', (msg) => {
     if (msg.content === '§screencast') {
         if (msg.channel.id == 410537317497831424) {
