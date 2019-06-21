@@ -1,0 +1,8 @@
+{
+  "name": "screencast-bot",
+  "version": "1.0.0",
+  "description": "A Discord Bot for Server screencast",
+  "main": "index.js",
+  "author": "Quirin Ecker",
+  "dependencies": {}
+}
