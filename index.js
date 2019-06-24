@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const auth = require('./auth.json');
-const opn = require('opn');
+const readLine = require('readline');
+const fs = require('fs');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -26,4 +26,19 @@ client.on('message', (msg) => {
     }
 });
 
-console.log(client.login(auth.token));
+let myInterface = readLine.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let token;
+
+myInterface.setPrompt("Token: ");
+myInterface.prompt();
+myInterface.on('line', (input) => {
+    token = input;
+    console.log(client.login(token));
+    myInterface.close();
+});
+
+
