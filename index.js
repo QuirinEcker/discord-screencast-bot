@@ -26,19 +26,20 @@ client.on('message', (msg) => {
     }
 });
 
-let myInterface = readLine.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// let myInterface = readLine.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
 
-let token;
+// let token;
 
-myInterface.setPrompt("Token: ");
-myInterface.prompt();
-myInterface.on('line', (input) => {
-    token = input;
-    console.log(client.login(token));
-    myInterface.close();
-});
+// myInterface.setPrompt("Token: ");
+// myInterface.prompt();
+// myInterface.on('line', (input) => {
+//     token = input;   
+//     myInterface.close();
+// });
+
+console.log(client.login(BOT_TOKEN));
 
 
