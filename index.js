@@ -25,10 +25,7 @@ client.on('message', (msg) => {
     }
 });
 
-let Bot_Token = new aws.BOT_TOKEN({
-    accessKeyId: process.env.BOT_TOKEN_KEY,
-    secretAccessKey: process.env.BOT_TOKEN_SECRET
-})
+let token = process.env.BOT_TOKEN;
 
 // let myInterface = readLine.createInterface({
 //     input: process.stdin,
@@ -44,6 +41,6 @@ let Bot_Token = new aws.BOT_TOKEN({
 //     myInterface.close();
 // });
 
-console.log(client.login(Bot_Token));
+console.log(client.login(token));
 
 
