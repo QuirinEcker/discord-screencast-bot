@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const readLine = require('readline');
-const fs = require('fs');
+const aws = require('aws-sdk');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -26,6 +25,11 @@ client.on('message', (msg) => {
     }
 });
 
+let Bot_Token = new aws.BOT_TOKEN({
+    accessKeyId: process.env.BOT_TOKEN_KEY,
+    secretAccessKey: process.env.BOT_TOKEN_SECRET
+})
+
 // let myInterface = readLine.createInterface({
 //     input: process.stdin,
 //     output: process.stdout
@@ -40,6 +44,6 @@ client.on('message', (msg) => {
 //     myInterface.close();
 // });
 
-console.log(client.login(BOT_TOKEN));
+console.log(client.login(Bot_Token));
 
 

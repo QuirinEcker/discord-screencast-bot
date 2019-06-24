@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Quirin Ecker",
   "dependencies": {
+    "aws-sdk": "^2.480.0",
     "discord.js": "^11.5.1",
     "opn": "^6.0.0"
   }
