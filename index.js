@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const aws = require('aws-sdk');
-const token = process.env.BOT_TOKEN;
+const token = require('./token').token;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
