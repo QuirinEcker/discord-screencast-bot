@@ -7,22 +7,15 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-    if (msg.content === '§screencast') {
-        if (msg.channel.id == 410537317497831424) {
+        if (msg.content === '§screencast') {
             if (msg.member.voiceChannelID != null) {
+                if (msg.guild.id !== "388433193638035457") msg.channel.send(`For Bugs visit the **Implodium**  discord server https://discord.gg/N8Qk6gA`);
                 msg.channel.send(`http://discordapp.com/channels/${msg.guild.id}/${msg.member.voiceChannelID}`);
             } else {
+                if (msg.guild.id !== "388433193638035457") msg.channel.send(`For Bugs visit the **Implodium** discord server https://discord.gg/N8Qk6gA`);
                 msg.channel.send("```diff\n-Please join a channel\n```");
             }
-        } else {
-            msg.channel.send("```diff\n-Please send bot commands into the bot chanel\n```");
-            let commandMessage = msg.channel.lastMessageID;
-            setTimeout(() => {
-                console.log(msg.channel.messages.get(msg.channel.lastMessageID).delete());
-                console.log(msg.channel.messages.get(commandMessage).delete());
-            }, 5000);
         }
-    }
 });
 
 console.log(client.login(token));
