@@ -10,7 +10,7 @@ client.on('message', (msg) => {
     if (msg.content === '§screencast') {
         if (msg.channel.id == 410537317497831424) {
             if (msg.member.voiceChannelID != null) {
-                msg.channel.send(`http://discordapp.com/channels/388433193638035457/${msg.member.voiceChannelID}`);
+                msg.channel.send(`http://discordapp.com/channels/${msg.guild.id}/${msg.member.voiceChannelID}`);
             } else {
                 msg.channel.send("```diff\n-Please join a channel\n```");
             }
